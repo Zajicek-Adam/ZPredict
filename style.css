@@ -1,0 +1,73 @@
+:root{
+    font-family: 'Raleway', sans-serif;
+}
+body, div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body, html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.container, .container > div{
+    flex-direction: column;
+    margin: 1em;
+}
+.container > div > div{
+    width: 300px;
+    justify-content: start;
+}
+.donut{
+    margin: 2em;
+    position: relative;
+    top: 30px;
+}
+.donut > circle{
+    transition: all 400ms ease;
+}
+h2{
+    font-weight: 700;
+    font-size: 3em;
+}
+p{
+    font-size: 1.5em;
+    font-weight: 500;
+    position: relative;
+    left: 30px;
+}
+.select{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.inactive{
+    opacity: 0;
+    transform: scale(0) translateX(-150px);
+}
+.active{
+    user-select: none;
+}
+.cselect{
+    border: 2px black solid;
+    padding: 0.5em 1em;
+    border-radius: 25px;
+    cursor: pointer;
+
+}
+.cselect > div{
+    cursor: default;
+    position: absolute;
+    transition: all 400ms ease-out;
+    margin-left: 12em;
+    border: 2px black solid;
+    background-color: #00FF80;
+    padding: 0.75em;
+}
+.cselect > div > span{
+    margin: 0.2em;
+    cursor: pointer;
+
+}
