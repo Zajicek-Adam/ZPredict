@@ -11,7 +11,7 @@ let correctCount = 0;
 setTimeout(doSomething, 1);
 
 function doSomething() {
-    if (localStorage.getItem("total") !== null) {
+    if (localStorage.getItem("total") !== null && localStorage.getItem("correct") !== null) {
         total = parseInt(myStorage.getItem('total'));
         correctCount = parseInt(myStorage.getItem('correct'));
     }
