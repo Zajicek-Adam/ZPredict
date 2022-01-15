@@ -2,6 +2,7 @@ let svg = document.getElementById("segment");
 let count = document.getElementById("count"); //total
 let sucesses = document.getElementById("success");
 let fails = document.getElementById("fail");
+let log = document.getElementById("log");
 
 myStorage = window.localStorage;
 
@@ -15,6 +16,7 @@ function doSomething() {
     if (localStorage.getItem("total") !== null && localStorage.getItem("correct") !== null) {
         total = parseInt(myStorage.getItem('total'));
         correctCount = parseInt(myStorage.getItem('correct'));
+        predicts.push(myStorage.getItem('predicts'));
     }
 
     update();
@@ -36,6 +38,8 @@ function update() {
 
     myStorage.setItem('total', total.toString());
     myStorage.setItem('correct', correctCount.toString());
+
+
 }
 function add() {
     if (correct && selectedWinner && selectedloser && selectedRegion) {
@@ -47,6 +51,7 @@ function add() {
             total++;
         }
         predicts.push(`${selectedRegion} | ${selectedWinner} vs ${selectedloser} | ${correct}`);
+
         myStorage.setItem('predicts', predicts);
 
         container[0].innerHTML = "select" + backupRegion;
