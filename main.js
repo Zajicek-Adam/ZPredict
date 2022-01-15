@@ -2,7 +2,7 @@ let svg = document.getElementById("segment");
 let count = document.getElementById("count"); //total
 let sucesses = document.getElementById("success");
 let fails = document.getElementById("fail");
-let log = document.getElementById("log");
+let log = document.getElementById("log-text");
 
 myStorage = window.localStorage;
 

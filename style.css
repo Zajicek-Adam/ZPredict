@@ -76,13 +76,25 @@ p{
 .log{
     position: relative;
     left: 100px;
-    width: 500px;
-    height: 350px;
+    width: 300px;
+    max-height: 450px;
+    font-size: 1.1em;
     border: 3px black solid;
     border-radius: 20px;
+    padding: 1em 0.5em;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
 }
-.log span{
+#log-text{
     font-weight: 500;
+    font-size: 1.35em;
+    left: 0;
+    top: 115px;
+}
+.log::-webkit-scrollbar { /* WebKit */
+    width: 0;
+    height: 0;
 }
 button{
     all: unset;
