@@ -9,6 +9,8 @@ myStorage = window.localStorage;
 let total = 0;
 let correctCount = 0;
 let predicts = [];
+let splitPredicts;
+let cycledThroughIndexes = 0;
 
 setTimeout(doSomething, 1);
 
@@ -17,6 +19,7 @@ function doSomething() {
         total = parseInt(myStorage.getItem('total'));
         correctCount = parseInt(myStorage.getItem('correct'));
         predicts.push(myStorage.getItem('predicts'));
+        splitPredicts = predicts.toString().split(',');
     }
 
     update();
@@ -31,6 +34,7 @@ function update() {
         stringToSet = "100 0";
     }
     svg.setAttribute("stroke-dasharray", stringToSet)
+    splitPredicts = predicts.toString().split(',');
 
     sucesses.innerText = correctCount + " correct";
     fails.innerText = total - correctCount + " incorrect";
@@ -39,15 +43,21 @@ function update() {
     myStorage.setItem('total', total.toString());
     myStorage.setItem('correct', correctCount.toString());
 
+    for (let index = 0; index < splitPredicts.length; index++) {
+        if (index >= cycledThroughIndexes) {
+            log.innerHTML += splitPredicts[index] + '<br>';
+            cycledThroughIndexes++;
+        }
+    }
 
 }
 function add() {
     if (correct && selectedWinner && selectedloser && selectedRegion) {
-        if(correct == 'yes'){
+        if (correct == 'yes') {
             correctCount++;
             total++;
         }
-        else{
+        else {
             total++;
         }
         predicts.push(`${selectedRegion} | ${selectedWinner} vs ${selectedloser} | ${correct}`);
