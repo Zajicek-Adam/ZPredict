@@ -74,14 +74,15 @@ p{
 
 }
 .log{
+    align-items: flex-start;
     position: relative;
     left: 100px;
     width: 300px;
-    max-height: 450px;
+    height: 450px;
     font-size: 1.1em;
     border: 3px black solid;
     border-radius: 20px;
-    padding: 1em 0.5em;
+    padding: 0.5em;
     overflow-y: scroll;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
@@ -89,8 +90,8 @@ p{
 #log-text{
     font-weight: 500;
     font-size: 1.35em;
-    left: 0;
-    top: 115px;
+    position: absolute;
+    top: 0px;
 }
 .log::-webkit-scrollbar { /* WebKit */
     width: 0;
