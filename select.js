@@ -69,6 +69,8 @@ container[0].addEventListener('click', e => {
             selectedloser = undefined;
             container[2].innerHTML = "select" + backupWinner;
             container[3].innerHTML = "select" + backupLoser;
+       //     localStorage.setItem("region", selectedRegion);
+
             console.log(selectedRegion)
         })
     }
@@ -83,11 +85,13 @@ container[1].addEventListener('click', e => {
             container[1].innerHTML = element.textContent + backupCorrect;
             container[1].firstElementChild.classList.toggle('inactive');
             correct = element.textContent;
+         //   localStorage.setItem("correct", correct);
+
         })
     }
 })
 
-container[2].innerHTML = "select" + container[2].innerHTML; 
+container[2].innerHTML = "select" + container[2].innerHTML;
 container[2].addEventListener('click', e => {
     if (selectedRegion != undefined) {
         container[2].firstElementChild.classList.toggle('inactive');
@@ -98,12 +102,14 @@ container[2].addEventListener('click', e => {
                 container[2].innerHTML = element.textContent + backupWinner;
                 container[2].firstElementChild.classList.toggle('inactive');
                 selectedWinner = element.textContent;
+           //     localStorage.setItem("winner", selectedWinner);
+
             })
         }
     }
 })
 
-container[3].innerHTML = "select" + container[3].innerHTML; 
+container[3].innerHTML = "select" + container[3].innerHTML;
 container[3].addEventListener('click', e => {
     if (selectedRegion != undefined) {
         container[3].firstElementChild.classList.toggle('inactive');
@@ -114,6 +120,8 @@ container[3].addEventListener('click', e => {
                 container[3].innerHTML = element.textContent + backupLoser;
                 container[3].firstElementChild.classList.toggle('inactive');
                 selectedloser = element.textContent;
+             //   localStorage.setItem("loser", selectedloser);
+
             })
         }
     }

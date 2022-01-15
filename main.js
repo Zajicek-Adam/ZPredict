@@ -7,6 +7,7 @@ myStorage = window.localStorage;
 
 let total = 0;
 let correctCount = 0;
+let predicts = [];
 
 setTimeout(doSomething, 1);
 
@@ -36,13 +37,23 @@ function update() {
     myStorage.setItem('total', total.toString());
     myStorage.setItem('correct', correctCount.toString());
 }
-function add(op) {
-    if (op) {
-        correctCount += 1;
-        total += 1;
+function add() {
+    if (correct && selectedWinner && selectedloser && selectedRegion) {
+        if(correct == 'yes'){
+            correctCount++;
+            total++;
+        }
+        else{
+            total++;
+        }
+        predicts.push(`${selectedRegion} | ${selectedWinner} vs ${selectedloser} | ${correct}`);
+        myStorage.setItem('predicts', predicts);
+
+        container[0].innerHTML = "select" + backupRegion;
+        container[1].innerHTML = "select" + backupCorrect;
+        container[2].innerHTML = "select" + backupWinner;
+        container[3].innerHTML = "select" + backupLoser;
+
+        update();
     }
-    else {
-        total += 1;
-    }
-    update();
 }
