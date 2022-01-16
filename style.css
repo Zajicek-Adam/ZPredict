@@ -1,5 +1,5 @@
 :root{
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 body, div{
     display: flex;
@@ -92,6 +92,11 @@ p{
     font-size: 1.35em;
     position: absolute;
     top: 0px;
+}
+#percentage{
+    position: absolute;
+    font-size: 2em;
+    margin-bottom: 18em;
 }
 .log::-webkit-scrollbar { /* WebKit */
     width: 0;

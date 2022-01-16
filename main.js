@@ -3,6 +3,7 @@ let count = document.getElementById("count"); //total
 let sucesses = document.getElementById("success");
 let fails = document.getElementById("fail");
 let log = document.getElementById("log-text");
+let percentageE = document.getElementById("percentage");
 
 myStorage = window.localStorage;
 
@@ -49,6 +50,7 @@ function update() {
             cycledThroughIndexes++;
         }
     }
+    percentageE.innerHTML = percentage + '%';
 
 }
 function add() {
