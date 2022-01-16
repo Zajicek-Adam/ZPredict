@@ -50,7 +50,7 @@ function update() {
             cycledThroughIndexes++;
         }
     }
-    percentageE.innerHTML = percentage + '%';
+    percentageE.innerHTML = Math.round(percentage) + '%';
 
 }
 function add() {
